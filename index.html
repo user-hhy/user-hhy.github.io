@@ -6,6 +6,30 @@
     <title>Title</title>
     <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+
+    <style type="text/css">
+        body{
+            overflow-y: hidden;
+        }
+        #OdfMes > div{
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            /*height: 1440px;*/
+            padding: 0px;
+            margin: 0px;
+            border-width: 0px;
+            cursor: default;
+        }
+        #OdfMes{
+            text-align: center;
+            margin: 0 auto;
+        }
+        canvas{
+            width: 100%;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -25,6 +49,7 @@
                 shadowBlur: 20,
                 shadowColor: '#04f2a7',
                 color: '#001c43',
+                // color: 'red',
             }
         }
     }, 
@@ -223,7 +248,7 @@
         var myChart = echarts.init(document.getElementById('OdfMes'));
         option = {
             backgroundColor: '#1a4377',
-
+                 // backgroundColor: 'red',
             tooltip: {},
             animationDurationUpdate: 1500,
             animationEasingUpdate: 'quinticInOut',
@@ -273,6 +298,7 @@
                         itemStyle: {
                             normal: {
                                 borderColor: '#82dffe',
+                                // borderColor: 'red',
                                 borderWidth: 4,
                                 shadowBlur: 10,
                                 shadowColor: '#04f2a7',
