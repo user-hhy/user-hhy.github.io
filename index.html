@@ -5,7 +5,7 @@
 	<title>Test</title>
 </head>
 <body>
-    <div id="main" style="width: 2500px; height: 1000px"></div>
+    <div id="main" style="width: 100%; height: 750px"></div>
     <div id="ss" ></div>
     <script src="https://echarts.baidu.com/build/dist/echarts.js"></script>
     <script type="text/javascript">
@@ -23,7 +23,7 @@
 			    categories[i] = {
 			        name: '类目' + i
 			    };
-			}
+			};
             var option = {
 				//左上角文字
 				title : {
@@ -61,7 +61,7 @@
                     type : 'force',
                     name : "Force tree",
 					
-					gravity:10, //设置节点的重力因子，控制节点的聚集程度。
+					gravity:5, //设置节点的重力因子，控制节点的聚集程度。
 					
 					roam: true,
 					draggable: true,
@@ -96,28 +96,100 @@
 						 {id:5,category:2,name:'5',label:'规模',des : "敦煌莫高窟共有735个洞窟，保存着数以千计的佛像、壁画、佛经等佛教艺术遗产。这些洞窟分布在一千三百多米长的崖壁上，总面积约五万平方米。",symbolSize:30,ignore:true,flag:true},
 						 {id:6,category:2,name:'6',label:'重要洞窟',des : "敦煌莫高窟中的一些洞窟和壁画尤为著名，如第16洞、第17洞、第96洞.其中最著名的是第17洞，也被称为'洛阳云岗之敦煌版'，保存了大量的佛教造像和精美的壁画。",symbolSize:30,ignore:true,flag:true},
 						 
+						 {id:7,category:1,name:'7',label:'泰山',des : "泰山风景区",symbolSize:30,ignore:true,flag:true},
+						 {id:8,category:2,name:'8',label:'位置',des : "山东省泰安市泰山区",symbolSize:30,ignore:true,flag:true},
+						 {id:9,category:2,name:'9',label:'简介',des : "泰山是中国的五岳之一，也是世界文化与自然双重遗产，被誉为中国的首山。",symbolSize:30,ignore:true,flag:true},
+						 {id:10,category:2,name:'10',label:'主要景点' ,symbolSize:30,ignore:true,flag:true},
+						 {id:11,category:3,name:'11',label:'玉皇顶',des:'泰山的主峰，是游客最常前往的地方，可以欣赏到壮观的山景和云海。',symbolSize:30,ignore:true,flag:true},
+						 {id:12,category:3,name:'12',label:'中天门',des:'泰山的入口，是登山的起点，也是欣赏泰山全景的绝佳位置。',symbolSize:30,ignore:true,flag:true},
+						 {id:13,category:3,name:'13',label:'曲阜孔庙',des:'泰山脚下的孔庙，是孔子的祭祀场所，是中国古代最大的孔庙之一。',symbolSize:30,ignore:true,flag:true},
 						 
-						 {id:8,category:1,name:'7',label:'八达岭长城',symbolSize:30,ignore:true,flag:true},
+						 {id:14,category:1,name:'14',label:'长白山',des : "长白山风景区",symbolSize:30,ignore:true,flag:true},
+						 {id:15,category:2,name:'15',label:'位置',des : "吉林省延边朝鲜族自治州安图县",symbolSize:30,ignore:true,flag:true},
+						 {id:16,category:2,name:'16',label:'简介',des : "长白山是中国东北地区最高的山脉，被誉为'东北屋脊',主峰白头山海拔2,691米，是中国第三高峰。",symbolSize:30,ignore:true,flag:true},
+						 {id:17,category:2,name:'17',label:'活动',des:'长白山景区提供多种户外活动，如徒步旅行、滑雪、温泉浴等。',symbolSize:30,ignore:true,flag:true},
+						 {id:18,category:2,name:'18',label:'民俗文化',des:'长白山地区居住着多个民族，包括朝鲜族、鄂温克族等，这里的民俗文化独特丰富。',symbolSize:30,ignore:true,flag:true},
+						 {id:19,category:2,name:'19',label:'特色美食',des:'长白山地区有许多特色美食，如长白山野菜、野生蘑菇、山地猪肉等，味道独特且新鲜。',symbolSize:30,ignore:true,flag:true},
 						 
+						 {id:20,category:1,name:'20',label:'布达拉宫',des : "布达拉宫",symbolSize:30,ignore:true,flag:true},
+						 {id:21,category:2,name:'21',label:'位置',des : "西藏自治区拉萨市城关区",symbolSize:30,ignore:true,flag:true},
+						 {id:22,category:2,name:'22',label:'主要景点',des : "主要景点",symbolSize:30,ignore:true,flag:true},
+						 {id:23,category:3,name:'23',label:'白宫',des:'白宫是布达拉宫的主体建筑，是达赖喇嘛的居住地和办公区域，也是布达拉宫的精华所在。',symbolSize:30,ignore:true,flag:true},
+						 {id:24,category:3,name:'24',label:'红宫',des:'红宫是布达拉宫的主要殿堂，包括大殿、佛殿、经堂等，供奉有众多佛像和宝贵的文物。',symbolSize:30,ignore:true,flag:true},
+						 {id:25,category:3,name:'25',label:'哲蚌寺',des:'哲蚌寺是布达拉宫内最重要的寺院，是达赖喇嘛世居的地方，也是藏传佛教格鲁派的中心。',symbolSize:30,ignore:true,flag:true},
+						 {id:26,category:2,name:'26',label:'文化',des : "布达拉宫是西藏佛教的重要圣地，也是藏传佛教格鲁派的总寺院。",symbolSize:30,ignore:true,flag:true},
 						 
+						 {id:27,category:1,name:'27',label:'西湖',des : "西湖",symbolSize:30,ignore:true,flag:true},
+						 {id:28,category:2,name:'28',label:'文化',des : "西湖是文人墨客的聚集地，许多古代文人都曾留下了关于西湖的诗词和文章。",symbolSize:30,ignore:true,flag:true},
+						 {id:29,category:2,name:'29',label:'主要景点',des : "主要景点",symbolSize:30,ignore:true,flag:true},
+						 {id:30,category:3,name:'30',label:'断桥',des:'白宫是布达拉宫的主体建筑，是达赖喇嘛的居住地和办公区域，也是布达拉宫的精华所在。',symbolSize:30,ignore:true,flag:true},
+						 {id:31,category:3,name:'31',label:'西湖十景',des:'红宫是布达拉宫的主要殿堂，包括大殿、佛殿、经堂等，供奉有众多佛像和宝贵的文物。',symbolSize:30,ignore:true,flag:true},
+						 {id:32,category:3,name:'32',label:'西湖岛屿',des:'哲蚌寺是布达拉宫内最重要的寺院，是达赖喇嘛世居的地方，也是藏传佛教格鲁派的中心。',symbolSize:30,ignore:true,flag:true},
+						 {id:33,category:2,name:'33',label:'自然风光',des : "西湖的景色四季各异，春天的柳岸、夏天的荷花、秋天的红叶、冬天的冰雪都各有韵味。",symbolSize:30,ignore:true,flag:true},
 						 
+						 {id:34,category:1,name:'34',label:'故宫',des : "故宫",symbolSize:30,ignore:true,flag:true},
+						 {id:35,category:2,name:'35',label:'规模',des : "故宫是一座宏伟壮丽的宫殿建筑，总占地面积达到约72万平方米，拥有大约9,000多间房间。",symbolSize:30,ignore:true,flag:true},
+						 {id:36,category:2,name:'36',label:'历史',des : "它是中国明清两代的皇宫，自1420年开始修建，一直作为中国皇室的居所和政治中心使用，直到1912年清朝灭亡。",symbolSize:30,ignore:true,flag:true},
+						 {id:37,category:2,name:'37',label:'主要建筑',des:'故宫内有许多宫殿、庭院和花园，其中一些最著名的建筑包括午门、太和殿、乾清宫、养心殿等。',symbolSize:30,ignore:true,flag:true},
+
+						 {id:38,category:1,name:'38',label:'天安门广场',symbolSize:30,ignore:true,flag:true},
+						 {id:39,category:2,name:'39',label:'广场规模',des : "天安门广场占地面积达到约44万平方米，可以容纳数百万人同时集会。",symbolSize:30,ignore:true,flag:true},
+						 {id:40,category:2,name:'40',label:'主要景点',des : "主要景点",symbolSize:30,ignore:true,flag:true},
+						 {id:41,category:3,name:'41',label:'天安门',des:'天安门是中国古代皇城的主要入口，是广场北侧的一座宏伟城楼，现在是中华人民共和国国徽的象征。',symbolSize:30,ignore:true,flag:true},
+						 {id:42,category:3,name:'42',label:'人民英雄纪念碑',des:'人民英雄纪念碑位于广场的中心，是为纪念中国人民英勇牺牲的烈士而建立的。',symbolSize:30,ignore:true,flag:true},
+						 {id:43,category:3,name:'43',label:'毛主席纪念堂',des:'毛主席纪念堂是纪念中国共产党主席毛泽东而建，供人民瞻仰领袖遗容。',symbolSize:30,ignore:true,flag:true},
 						 
-						 // {id:3,category:1,name:'3',label:'泰山',symbolSize:30,ignore:true,flag:true},
-						 // {id:4,category:1,name:'4',label:'长白山',symbolSize:30,ignore:true,flag:true},
-						 // {id:5,category:1,name:'5',label:'布达拉宫',symbolSize:30,ignore:true,flag:true},
-						 // {id:6,category:1,name:'6',label:'故宫',symbolSize:30,ignore:true,flag:true},
-						 // {id:7,category:1,name:'7',label:'天安门广场',symbolSize:30,ignore:true,flag:true},
-						 // {id:8,category:1,name:'8',label:'颐和园',symbolSize:30,ignore:true,flag:true},
-						 // {id:9,category:1,name:'9',label:'天坛',symbolSize:30,ignore:true,flag:true},
-						 // {id:10,category:1,name:'10',label:'西湖',symbolSize:30,ignore:true,flag:true},
-						 // {id:11,category:2,name:'11',label:'南天门',symbolSize:30,ignore:true,flag:true},
-						 // {id:12,category:3,name:'12',label:'二郎神',symbolSize:30,ignore:true,flag:true},
-						 // {id:13,category:3,name:'13',label:'哪吒',symbolSize:30,ignore:true,flag:true},
+						 {id:44,category:1,name:'44',label:'八达岭长城',symbolSize:30,ignore:true,flag:true},
+						 {id:45,category:2,name:'45',label:'规模',des : "八达岭长城总长约7.8公里，是一段以砖石结构为主的长城，高度和宽度相对较大，保留较为完整。",symbolSize:30,ignore:true,flag:true},
+						 {id:46,category:2,name:'46',label:'历史',des : "八达岭长城是明代万里长城的重要组成部分，它起源于公元公元1368年至1644年的明朝时期。",symbolSize:30,ignore:true,flag:true},
+						 
+						 {id:47,category:1,name:'47',label:'颐和园',symbolSize:30,ignore:true,flag:true},
+						 {id:48,category:2,name:'48',label:'规模',des : "颐和园占地面积约达290公顷，其中75%为水域，包括湖泊和人工水道。",symbolSize:30,ignore:true,flag:true},
+						 {id:49,category:2,name:'49',label:'历史',des : "颐和园最早建于清朝乾隆年间（18世纪），是为皇家家庭用于休憩和游玩的皇家花园。",symbolSize:30,ignore:true,flag:true},
+						 {id:50,category:2,name:'50',label:'主要景点',des:'主要景点',symbolSize:30,ignore:true,flag:true},
+						 {id:51,category:3,name:'51',label:'长廊',des:'颐和园拥有著名的长廊，长达728米，是世界上最长的画廊，以其美丽的绘画和雕刻而闻名。',symbolSize:30,ignore:true,flag:true},
+						 {id:52,category:3,name:'52',label:'佛香阁',des:'佛香阁是一座古塔，内部陈列着佛教文物和文化艺术品。',symbolSize:30,ignore:true,flag:true},
+						 {id:53,category:3,name:'53',label:'万寿山',des:'位于颐和园的北部，是一个人工山岗，上有观景台，游客可以登上观景台俯瞰园区的全景。',symbolSize:30,ignore:true,flag:true},
+						 
+						 {id:54,category:1,name:'54',label:'天坛',symbolSize:30,ignore:true,flag:true},
+						 {id:55,category:2,name:'55',label:'规模',des : "天坛占地面积约273公顷，包括祈年殿、圜丘坛、祈谷地等建筑和广阔的园区。",symbolSize:30,ignore:true,flag:true},
+						 {id:56,category:2,name:'56',label:'历史',des : "天坛始建于明代永乐年间（公元1406年至1420年），是为了举行皇帝祭天祈谷的重要场所。",symbolSize:30,ignore:true,flag:true},
+						 {id:57,category:2,name:'57',label:'主要景点',des:'主要景点',symbolSize:30,ignore:true,flag:true},
+						 {id:58,category:3,name:'58',label:'祈年殿',des:'祈年殿是天坛的主要建筑，是皇帝祭天的场所，具有独特的圆顶和华丽的彩绘。',symbolSize:30,ignore:true,flag:true},
+						 {id:59,category:3,name:'59',label:'圜丘坛',des:'圜丘坛是一个圆形的高坛，象征着天，是祭天仪式的核心区域。',symbolSize:30,ignore:true,flag:true},
+						 {id:60,category:3,name:'60',label:'祈谷地',des:'祈谷地是一个庄严肃穆的祭祀区域，用于祈求丰收和五谷丰登。',symbolSize:30,ignore:true,flag:true},
                     ],
                     links : 
 					[ 	 //莫高窟
 						 {source : 1,target : 0},
-						 {source : 2,target : 1},{source : 3,target : 1},{source : 4,target : 1},{source : 5,target : 1},{source : 6,target : 1}
+						 {source : 2,target : 1},{source : 3,target : 1},{source : 4,target : 1},{source : 5,target : 1},{source : 6,target : 1},
+						 //泰山
+						 {source : 7,target : 0},
+						 {source : 8,target : 7},{source : 9,target : 7},{source : 10,target : 7},{source : 11,target : 10},{source : 12,target : 10},{source : 13,target : 10},
+						 //长白山
+						 {source : 14,target : 0},
+						 {source : 15,target : 14},{source : 16,target : 14},{source : 17,target : 14},{source : 18,target : 14},{source : 19,target : 14},
+						 //布达拉宫
+						 {source : 20,target : 0},
+						 {source : 21,target : 20},{source : 22,target : 20},{source : 26,target : 20},{source : 23,target : 22},{source : 24,target : 22},{source : 25,target : 22},
+						 //西湖
+						 {source : 27,target : 0},
+						 {source : 28,target : 27},{source : 29,target : 27},{source : 33,target : 27},{source : 30,target : 29},{source : 31,target : 29},{source : 32,target : 29},
+						 //故宫
+						 {source : 34,target : 0},
+						 {source : 35,target : 34},{source : 36,target : 34},{source : 37,target : 34},
+						 //天安门广场
+						 {source : 38,target : 0},
+						 {source : 39,target : 38},{source : 40,target : 38},{source : 41,target : 40},{source : 42,target : 40},{source : 43,target : 40},
+						 //八达岭长城
+						 {source : 44,target : 0},
+						 {source : 45,target : 44},{source : 46,target : 44},
+						 //颐和园
+						 {source : 47,target : 0},
+						 {source : 48,target : 47},{source : 49,target : 47},{source : 50,target : 47},{source : 51,target : 50},{source : 52,target : 50},{source : 53,target : 50},
+						 //天坛
+						 {source : 54,target : 0},
+						 {source : 55,target : 54},{source : 56,target : 54},{source : 57,target : 54},{source : 58,target : 57},{source : 59,target : 57},{source : 60,target : 57}
 						 
 						 
  // {source : 3,target : 0},
