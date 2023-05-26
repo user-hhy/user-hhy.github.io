@@ -1,233 +1,210 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>B_EP2 ECharts 关系图</title>
-    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
-    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+	<meta charset="UTF-8">
+	<title>Test</title>
 </head>
- 
 <body>
-<div id="main" style="width:100%;height:1000px"></div>
-<script type="text/javascript">
-    var chart = echarts.init(document.getElementById('main'));
-    var categories = [];
-    for (var i = 0; i < 3; i++) {
-        categories[i] = {
-            name: '类目' + i
-        };
-    }
-	var nodes=[
-		{
-		    name: '景点',
-		    des: 'nodedes01',
-		    symbolSize: 110,
-		    category: 0,
-		}, 
-		{
-		    name: '莫高窟',
-		    des: 'nodedes02',
-		    symbolSize: 100,
-		    category: 1,
-		}, 
-		{
-		    name: '八达岭长城',
-		    des: 'nodedes3',
-		    symbolSize: 100,
-		    category: 1,
-		}, 
-		{
-		    name: '泰山',
-		    des: 'nodedes04',
-		    symbolSize: 100,
-		    category: 1,
-		}, 
-		{
-		    name: '长白山',
-		    des: 'nodedes05',
-		    symbolSize: 100,
-		    category: 1,
-		},
-		{
-		    name:'布达拉宫',
-		    des: 'nodedes06',
-		    symbolSize: 100,
-		    category: 1,
-		},
-		{
-		    name:'故宫',
-		    des: 'nodedes06',
-		    symbolSize: 100,
-		    category: 1,
-		},
-		{
-		    name:'天安门广场',
-		    des: 'nodedes06',
-		    symbolSize: 100,
-		    category: 1,
-		},
-		{
-		    name:'颐和园',
-		    des: 'nodedes06',
-		    symbolSize: 100,
-		    category: 1,
-		},
-		{
-		    name:'天坛',
-		    des: 'nodedes06',
-		    symbolSize: 100,
-		    category: 1,
-		},
-		{
-		    name:'西湖',
-		    des: 'nodedes06',
-		    symbolSize: 100,
-		    category: 1,
-		},
-	];
-	var links =[
-		{
-		    source: '景点',
-		    target: '莫高窟',
-		    name: '包含',
-		    des: 'link01des'
-		},
-		{
-		    source: '景点',
-		    target: '八达岭长城',
-		    name: '包含',
-		    des: 'link02des'
-		}, 
-		{
-		    source: '景点',
-		    target: '泰山',
-		    name: '包含',
-		    des: 'link03des'
-		}, 
-		{
-		    source: '景点',
-		    target: '长白山',
-		    name: '包含',
-		    des: 'link04des'
-		},
-		{
-		    source: '景点',
-		    target: '布达拉宫',
-		    name: '包含',
-		    des: 'link05des'
-		},
-		{
-		    source: '景点',
-		    target: '故宫',
-		    name: '包含',
-		    des: 'link06des'
-		},
-		{
-		    source: '景点',
-		    target: '天安门广场',
-		    name: '包含',
-		    des: 'link07des'
-		},
-		{
-		    source: '景点',
-		    target: '天坛',
-		    name: '包含',
-		    des: 'link08des'
-		},
-		{
-		    source: '景点',
-		    target: '颐和园',
-		    name: '包含',
-		    des: 'link09des'
-		},
-		{
-		    source: '景点',
-		    target: '西湖',
-		    name: '包含',
-		    des: 'link10des'
-		}
-	];
-    var option = {
-        // 图的标题
-        title: {
-            text: 'B_EP2 ECharts 关系图'
-        },
-        // 提示框的配置
-        tooltip: {
-            formatter: function (x) {
-                return x.data.des;
+    <div id="main" style="width: 2500px; height: 1000px"></div>
+    <div id="ss" ></div>
+    <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+    <script type="text/javascript">
+
+        require.config({
+            paths : {
+                echarts : 'http://echarts.baidu.com/build/dist'
             }
-        },
-        // 工具箱
-        toolbox: {
-            // 显示工具箱
-            show: true,
-            feature: {
-                mark: {
-                    show: true
-                },
-                // 还原
-                restore: {
-                    show: true
-                },
-                // 保存为图片
-                saveAsImage: {
-                    show: true
-                }
-            }
-        },
-        legend: [{
-            // selectedMode: 'single',
-            data: categories.map(function (a) {
-                return a.name;
-            })
-        }],
-        series: [{
-            type: 'graph', // 类型:关系图
-			data:nodes,
-			links:links,
-            layout: 'force', //图的布局，类型为力导图
-            symbolSize: 50, // 调整全局节点的大小   也可以在data中设置
-            roam: true, // 是否开启鼠标缩放和平移漫游。默认不开启。如果只想要开启缩放或者平移,可以设置成 'scale' 或者 'move'。设置成 true 为都开启
-            edgeSymbol: ['none', 'arrow'], //边的样式
-            edgeSymbolSize: 10,            //调整箭头的大小
-            force: {
-                repulsion: 1250,
-                edgeLength: 150
-            },
-			emphasis: {
-			  focus: 'adjacency' // 点击节点时突出显示与之相连的节点
-			},
-            draggable: true,
-            lineStyle: {
-                normal: {
-                    width: 2,
-                    color: '#59155b',   //更改边的样式
-                }
-            },
-            edgeLabel: {                
-                normal: {
-                    show: true,
+        });
+        require([ "echarts", "echarts/chart/force"], function(ec)
+		{
+            var myChart = ec.init(document.getElementById('main'), 'macarons');
+			var categories = [];
+			for (var i = 0; i < 4; i++) {
+			    categories[i] = {
+			        name: '类目' + i
+			    };
+			}
+            var option = {
+				//左上角文字
+				title : {
+					text: 'B_EP2 ECharts 关系图'
+				},
+				//鼠标放在节点上显示名字
+               tooltip : {
                     formatter: function (x) {
-                        return x.data.name;
-                    },
-					textStyle: {
-					    fontSize: 17
-					}
+                        return x.data.des
+                    }
+                },
+				//右上角工具
+				toolbox: {
+				    // 显示工具箱
+				    show: true,
+				    feature: {
+				        mark: {
+				            show: true
+				        },
+				        // 还原
+				        restore: {
+				            show: true
+				        },
+				        // 保存为图片
+				        saveAsImage: {
+				            show: true
+				        }
+				    }
+				},
+				//背景色
+				// backgroundColor: '#1a4377', 	
+							
+                series : [
+				{
+                    type : 'force',
+                    name : "Force tree",
 					
+					gravity:10, //设置节点的重力因子，控制节点的聚集程度。
+					
+					roam: true,
+					draggable: true,
+		
+
+					//设置节点的样式，包括节点的颜色、边框、透明度等。
+                    itemStyle : {
+                        normal : {
+                            label : {show : true},
+                            nodeStyle : {
+                                brushType : 'both',
+                                borderColor : 'rgba(0, 255, 0, 0.4)',
+                                borderWidth : 5
+                            },
+                        }
+                    },
+					//设置连线的样式，包括连线的颜色、宽度、类型等。
+
+						
+					//设置节点的标签样式，包括标签的文本、位置、颜色等。
+					label : {
+						
+					},
+                    nodes :
+                    [
+						 {id:0,category:0,name:'0',label:'景点',des : "景点",symbolSize:50,ignore:false,flag:true},
+						 
+						 {id:1,category:1,name:'1',label:'莫高窟',des : "莫高窟风景区",symbolSize:30,ignore:true,flag:true},
+						 {id:2,category:2,name:'2',label:'位置',des : "甘肃省酒泉市敦煌市",symbolSize:30,ignore:true,flag:true},
+						 {id:3,category:2,name:'3',label:'历史',des : "敦煌莫高窟的建造始于4世纪，历经了约千年的时间才完成，涵盖了南北朝、隋唐、五代十国、西夏、元等历史时期。",symbolSize:30,ignore:true,flag:true},
+						 {id:4,category:2,name:'4',label:'背景',des : "莫高窟是由佛教信仰者和僧侣们在陡峭的崖壁上凿刻而成，旨在表达他们对佛教信仰的虔诚和敬意。",symbolSize:30,ignore:true,flag:true},
+						 {id:5,category:2,name:'5',label:'规模',des : "敦煌莫高窟共有735个洞窟，保存着数以千计的佛像、壁画、佛经等佛教艺术遗产。这些洞窟分布在一千三百多米长的崖壁上，总面积约五万平方米。",symbolSize:30,ignore:true,flag:true},
+						 {id:6,category:2,name:'6',label:'重要洞窟',des : "敦煌莫高窟中的一些洞窟和壁画尤为著名，如第16洞、第17洞、第96洞等，它们展现了丰富的主题和卓越的艺术技巧。其中最著名的是第17洞，也被称为'洛阳云岗之敦煌版'，保存了大量的佛教造像和精美的壁画。",symbolSize:30,ignore:true,flag:true},
+						 
+						 
+						 // {id:2,category:1,name:'2',label:'八达岭长城',symbolSize:30,ignore:true,flag:true},
+						 // {id:3,category:1,name:'3',label:'泰山',symbolSize:30,ignore:true,flag:true},
+						 // {id:4,category:1,name:'4',label:'长白山',symbolSize:30,ignore:true,flag:true},
+						 // {id:5,category:1,name:'5',label:'布达拉宫',symbolSize:30,ignore:true,flag:true},
+						 // {id:6,category:1,name:'6',label:'故宫',symbolSize:30,ignore:true,flag:true},
+						 // {id:7,category:1,name:'7',label:'天安门广场',symbolSize:30,ignore:true,flag:true},
+						 // {id:8,category:1,name:'8',label:'颐和园',symbolSize:30,ignore:true,flag:true},
+						 // {id:9,category:1,name:'9',label:'天坛',symbolSize:30,ignore:true,flag:true},
+						 // {id:10,category:1,name:'10',label:'西湖',symbolSize:30,ignore:true,flag:true},
+						 // {id:11,category:2,name:'11',label:'南天门',symbolSize:30,ignore:true,flag:true},
+						 // {id:12,category:3,name:'12',label:'二郎神',symbolSize:30,ignore:true,flag:true},
+						 // {id:13,category:3,name:'13',label:'哪吒',symbolSize:30,ignore:true,flag:true},
+                    ],
+                    links : 
+					[ 	 //莫高窟
+						 {source : 1,target : 0},
+						 {source : 2,target : 1},{source : 3,target : 1},{source : 4,target : 1},{source : 5,target : 1},{source : 6,target : 1}
+						 
+						 
+ // {source : 3,target : 0},
+						 // {source : 4,target : 0}, {source : 5,target : 0}, {source : 6,target : 0}, 
+						 // {source : 7,target : 0}, {source : 8,target : 0}, {source : 9,target : 0}, 
+						 // {source : 10,target : 0},{source : 11,target : 3},{source : 12,target : 11},
+						 // {source : 13,target : 11}
+					],
+					categories: categories,
+                }]
+            };
+			
+            myChart.setOption(option);
+			
+            var ecConfig = require('echarts/config');
+			
+            function openOrFold(param)
+			{
+                var option = myChart.getOption();
+                var nodesOption = option.series[0].nodes;
+                var linksOption = option.series[0].links;
+                var data = param.data;
+                var linksNodes = [];
+
+                var categoryLength = option.series[0].categories.length;
+
+                if (data.category == (categoryLength - 1)) 
+				{
+                    alert(data.label);
                 }
-            },
-            label: {
-                normal: {
-                    show: true,
-                    textStyle: {
-						fontSize: 20   //调整节点内文字大小
-					}
+
+                if (data != null && data != undefined)
+				{
+                    if (data.flag)
+					{
+
+                        for ( var m in linksOption)
+						{
+
+                            if (linksOption[m].target == data.id)
+							{
+                                linksNodes.push(linksOption[m].source);
+                            }
+                        }
+                        if (linksNodes != null && linksNodes != undefined) 
+						{
+                            for ( var p in linksNodes) 
+							{
+                                nodesOption[linksNodes[p]].ignore = false;
+                                nodesOption[linksNodes[p]].flag = true;
+                            }
+                        }
+                        nodesOption[data.id].flag = false;
+                        myChart.setOption(option);
+                    } 
+					else 
+					{
+
+                        for ( var m in linksOption)
+						{
+
+                            if (linksOption[m].target == data.id)
+							{
+                                linksNodes.push(linksOption[m].source);
+                            }
+                            if (linksNodes != null && linksNodes != undefined)
+							{
+                                for ( var n in linksNodes)
+								{
+                                    if (linksOption[m].target == linksNodes[n]) 
+									{
+                                        linksNodes.push(linksOption[m].source);
+                                    }
+                                }
+                            }
+                        }
+                        if (linksNodes != null && linksNodes != undefined)
+						{
+                            for ( var p in linksNodes)
+							{
+                                nodesOption[linksNodes[p]].ignore = true;
+                                nodesOption[linksNodes[p]].flag = true;
+                            }
+                        }
+                        nodesOption[data.id].flag = true;
+                        myChart.setOption(option);
+                    }
                 }
-            },
-            categories: categories,
-        }]
-    };
-	chart.setOption(option);
-</script>
+            }
+            myChart.on(ecConfig.EVENT.CLICK, openOrFold);
+        });
+	</script>
 </body>
 </html>
